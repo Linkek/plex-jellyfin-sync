@@ -1,10 +1,23 @@
 const readline = require('readline');
+const fs = require('fs');
+const path = require('path');
 const { spawn } = require('child_process');
 
 // Dynamically import chalk (since it's ESM-only)
 let chalk;
 (async () => {
     chalk = await import('chalk');
+
+    const CONFIG_PATH = path.join(__dirname, 'config.json');
+    const CONFIG_EXISTS = fs.existsSync(CONFIG_PATH);
+
+    if (!CONFIG_EXISTS) {
+        console.clear();
+        console.log(chalk.default.red.bold('\n🚫 Missing config.json'));
+        console.log(chalk.default.yellow('Please copy ') + chalk.default.cyan('config.json.example') + chalk.default.yellow(' to ') + chalk.default.cyan('config.json'));
+        console.log(chalk.default.yellow('Then edit it with your Plex & Jellyfin settings before running the tool.\n'));
+        process.exit(1);
+    }
 
     const options = [
         {
