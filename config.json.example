@@ -1,0 +1,17 @@
+{
+  "plexBase": "http://localhost:32400",
+  "jellyfinBase": "http://localhost:8096",
+  "jellyfinApiKey": "123456789abcdef1234567890abcdef", // Your Jellyfin API key
+  "debug": false, // Set to true for debugging output
+  "userMappings": [
+    {
+      "plexToken": "plexToken1234567890abcdef", // Your user Plex token
+      "jellyfinUsername": "username1" // The Jellyfin username to map to this Plex token
+    },
+    {
+      "plexToken": "plexToken1234567890abcdef",
+      "jellyfinUsername": "username2"
+    }
+    // You can add more users here...
+  ]
+}

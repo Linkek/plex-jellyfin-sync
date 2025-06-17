@@ -1,0 +1,20 @@
+{
+  "name": "plex-jellyfin-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sync.js",
+  "scripts": {
+    "start": "node start.js",
+    "sync": "node ./scripts/sync.js",
+    "reset": "node ./scripts/resetWatched.js",
+    "watched-plex": "node ./scripts/watchedStatus-plex.js",
+    "watched-fellyfin": "node ./scripts/watchedStatus-jellyfin.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "chalk": "^5.4.1"
+  }
+}
